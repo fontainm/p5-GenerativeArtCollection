@@ -1,0 +1,95 @@
+@font-face {
+    font-family: "GothamNarrow";
+    src: url("assets/Gotham-Narrow-Black.otf") format("opentype");
+    font-weight: bold;
+}
+
+body {
+    font-family: "Gotham Narrow";
+    font-weight: bold;
+    width: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 10vw;
+    font-weight: bold;
+}
+
+canvas {
+    margin: auto;
+    display: block;
+}
+
+#scores {
+    margin: auto;
+    font-size: 5vw;
+    width: auto;
+    color:white;
+}
+
+#gameover {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    font-size: 12vw;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    line-height: 1;
+    opacity: 0;
+}
+
+#gameover.hideGO {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#gameover.showGO {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#gameover p {
+    position: relative;
+    top: 30%;
+    text-align: center;
+}
+
+#gameover-txt {
+    font-weight: normal;
+    font-size: 3vw;
+}
+
+#sketch {
+    position: relative;
+    transform: scale(1.0);
+
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+#sketch.show {
+    transform: scale(1.0);
+    transition: transform 0.2s ease-in-out;
+}
+
+#sketch.hide {
+    transform: scale(0.0);
+    transition: transform 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 80pt;
+    }
+    #scores {
+        font-size: 30pt;
+    }
+    #gameover-hl {
+        font-size: 80pt;
+    }
+    #gameover-txt {
+        font-size: 20pt;
+    }
+}

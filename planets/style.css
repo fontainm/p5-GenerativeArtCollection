@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+canvas {
+    margin: auto;
+}
+
+button {
+    background-color: #408bf9;
+    border: none;
+    border-radius: 4px;
+    width: 130px;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #2e67bd;
+    color: white;
+}
+
+/* DROPDOWN */
+select {
+    border: none;
+    padding: 5px 12px;
+    background-color: #408bf9;
+    font-size: 14px;
+    color: white;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+}
+
+select:hover {
+    background-color: #2e67bd;
+    color: white;
+}
+
+option {
+    background: #222;
+    border-top: 1px solid #444;
+    padding: .3em 1em .3em 1em;
+}
+
+/* SLIDER */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #408bf9;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #408bf9;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    transform: scale(2);
+}

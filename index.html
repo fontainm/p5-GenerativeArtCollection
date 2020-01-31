@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>Mathias Fontain | p5.js</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Venobox CSS -->
+    <link rel="stylesheet" href="js/venobox/venobox.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <script src="js/modernizer.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Smooth Scroll -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function(){
+    
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+        });
+        } // End if
+    });
+    });
+    </script>
+    <!-- reCaptcha -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+<body> 
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <img class="preloader" src="images/loader.gif" alt="">
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+        <header class="header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Mathias Fontain</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">                            
+                            <li><a href="#sketches">Sketches</a></li>
+                            <li><a href="#about">About</a></li>   
+                            <li><a href="#contact">Contact</a></li>                            
+                        </ul>
+                    </div>
+                </nav><!-- end navbar -->
+            </div><!-- end container -->
+        </header><!-- end header -->
+        
+        <div class="section lb">
+            <div class="container">
+                <div class="row intro text-center wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <div class="col-md-10 col-md-offset-1 col-sm-12">
+                        <h1>All about <span class="element"></span></h1>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div>
+        </div>
+
+        <div class="section wb" id="sketches">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="portfolio-filter wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                            <ul>
+                                <li><a class="btn btn-dark active" href="#" data-filter="*">All</a></li>
+                                <li><a class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="2" href="#" data-filter=".cat1">Generative Art</a></li>
+                                <li><a class="btn btn-dark" href="#" data-toggle="tooltip" data-placement="top" title="8" data-filter=".cat2">Simulations</a></li>                           
+                                <li><a class="btn btn-dark" href="#" data-toggle="tooltip" data-placement="top" title="3" data-filter=".cat4">Loading Icons</a></li>                                
+                                <li><a class="btn btn-dark" href="#" data-toggle="tooltip" data-placement="top" title="1" data-filter=".cat3">Data Visualization</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div id="da-thumbs" class="row da-thumbs portfolio wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                    <div class="post-media pitem item-w1 item-h1 cat1">
+                        <a href="work.php?name=circles" title="">                            
+                            <img src="images/thumbnails/art-circles.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Circles <small>Generative Art</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="post-media pitem item-w1 item-h1 cat2">
+                        <a href="work.php?name=system" title="">
+                            <img src="images/thumbnails/sim-system.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>System <small>Simulation</small></h3>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="post-media pitem item-w1 item-h1 cat2">
+                        <a href="work.php?name=race" title="">
+                            <img src="images/thumbnails/sim-race.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Race <small>Simulation</small></h3>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="post-media pitem item-w1 item-h1 cat2">
+                        <a href="work.php?name=mountain" title="">
+                            <img src="images/thumbnails/sim-mountain.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Mountain <small>Simulation</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="post-media pitem item-w1 item-h1 cat2">
+                        <a href="work.php?name=sunset" title="">
+                            <img src="images/thumbnails/sim-sunset.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Sunset <small>Simulation</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="post-media pitem item-w1 item-h1 cat1">
+                        <a href="work.php?name=triangle" title="">
+                            <img src="images/thumbnails/art-triangle.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Triangles <small>Generative Art</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                     <div class="post-media pitem item-w1 item-h1 cat4">
+                        <a href="work.php?name=infinity" title="">
+                            <img src="images/thumbnails/load-infinity.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Infinity <small>Loading Icons</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="post-media pitem item-w1 item-h1 cat2">
+                        <a href="work.php?name=raindrops" title="">
+                            <img src="images/thumbnails/sim-raindrops.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Raindrops <small>Simulation</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                     <div class="post-media pitem item-w1 item-h1 cat4">
+                        <a href="work.php?name=helix" title="">
+                            <img src="images/thumbnails/load-spirale.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Helix <small>Loading Icons</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                     <div class="post-media pitem item-w1 item-h1 cat4">
+                        <a href="work.php?name=squares" title="">
+                            <img src="images/thumbnails/load-squares.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Squares <small>Loading Icons</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                     <div class="post-media pitem item-w1 item-h1 cat2">
+                        <a href="work.php?name=atom" title="">
+                            <img src="images/thumbnails/sim-atom.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Atom <small>Simulation</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                     <div class="post-media pitem item-w1 item-h1 cat2">
+                        <a href="work.php?name=fan" title="">
+                            <img src="images/thumbnails/sim-fan.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Fan <small>Simulation</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="post-media pitem item-w1 item-h1 cat3">
+                        <a href="work.php?name=iss" title="">
+                            <img src="images/thumbnails/dataviz-iss.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>ISS <small>Data Visualization</small></h3>
+                            </div>
+                        </a>
+                    </div>
+
+                     <div class="post-media pitem item-w1 item-h1 cat2">
+                        <a href="work.php?name=arcs" title="">
+                            <img src="images/thumbnails/sim-graphic.jpg" alt="" class="img-responsive">
+                            <div>
+                                <h3>Arcs <small>Simulation</small></h3>
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div><!-- end portfolio -->
+            </div><!-- end container -->
+        </div><!-- end section -->
+
+        <div class="section wb" id="about">
+            <div class="container">
+                <div class="row intro text-center wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <div class="col-md-12">
+                        <h1>About</h1>
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-2" style="text-align: right;">Name</div>
+                            <div class="col-sm-2" style="text-align: left;">Mathias Fontain</div>
+                            <div class="col-sm-4"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-2" style="text-align: right;">Studiengang</div>
+                            <div class="col-sm-2" style="text-align: left;">Master Digitale Medien</div>
+                            <div class="col-sm-4"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-2" style="text-align: right;">Modul</div>
+                            <div class="col-sm-2" style="text-align: left;">Projekt 2b</div>
+                            <div class="col-sm-4"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-2" style="text-align: right;">Semester</div>
+                            <div class="col-sm-2" style="text-align: left;">Sommersemester 2018</div>
+                            <div class="col-sm-4"></div>
+                        </div>
+                        <br>
+                        <p>Die Sketches wurden im Rahmen der Veranstaltung Projekt 2b an der Technischen Hochschule Brandenburg erstellt. Für die Umsetzung wurden folgende Tools und Software verwendet:</p>
+                    </div><!-- end col -->
+                </div>
+                <div class="row m45">
+                    <div class="col-md-4 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeIn;">
+                        <div class="contact-widget">
+                            <i class="flaticon-folder alignleft"></i>
+                            <h4>p5.js-Library</h4>
+                            <hr>
+                            <p>Library basierend auf JavaScript</p>
+                            <a href="https://p5js.org/" target="_blank"><i class="fa fa-bookmark"></i> p5js.org</a>
+                        </div><!-- end contact-widget -->
+                    </div><!-- end col -->
+
+                    <div class="col-md-4 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.6s; animation-name: fadeIn;">
+                        <div class="contact-widget">
+                            <i class="flaticon-plugin alignleft"></i>
+                            <h4>Atom</h4>
+                            <hr>
+                            <p>Open-Source Texteditor</p>
+                            <a href="https://atom.io/" target="_blank"><i class="fa fa-code"></i> atom.io</a>
+                        </div><!-- end contact-widget -->
+                    </div><!-- end col -->
+
+                    <div class="col-md-4 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.8s; animation-name: fadeIn;">
+                        <div class="contact-widget">
+                            <i class="flaticon-web alignleft"></i>
+                            <h4>Visual Studio Code</h4>
+                            <hr>
+                            <p>Quelltext-Editor von Microsoft</p>
+                            <a href="https://code.visualstudio.com/" target="_blank"><i class="fa fa-globe"></i> code.visualstudio.com</a>
+                        </div><!-- end contact-widget -->
+                    </div><!-- end col -->
+                </div>   
+                <!--
+                <div class="col-md-12" style="text-align: center">
+                    <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#more">Mehr lesen...</button>
+                </div>
+                <div id="more" class="collapse">-->
+                <div class="col-md-12">
+                    <h3>Workflow</h3>
+                    Die Arbeit einem Sketch begann immer mit derselben Grundlage: Eine einfarbige 800 x 600 Pixel großen Zeichenfläche. Was schlussendlich darauf gezeichnet basiert dann meistens auf einer <b>Idee</b>, einer <b>Inspiration</b>, oder auf <b>gut Glück</b>. 
+                    Nicht alle Skripte sind auch immer zielführend. Was vorerst nach einer guten Idee klang, entsprach in der Umsetzung oft nicht meinen Vorstellungen. Umgekehrt stellten sich auch einfache Ideen oft auch als vorzeigbare Werke heraus. Die obige Sammlung ist eine Kombination aus all dem.
+                    <h3>Kategorien</h3>
+                    Die präsentierten Sketches lassen sich in vier Kategorien unterteilen: Generative Kunst, Simulationen, Lade-Icons und Datenvisualisierung. <br>
+                    <ul>
+                    <li>Ziel der <b>generativen Kunst</b> ist es in diesem Fall, ein abstraktes, auf Zufall basierendes Werk, zu erzeugen. Das interessante dabei ist, dass sich der Entstehungsprozess des Werkes mitverfolgen lässt.</li>
+                        <li>In den <b>Simulationen</b> werden Formen erzeugt, die sich nach bestimmten Algorithmen verhalten. Die Zuhilfenahme des Zufalls ist hier auch optional. Das Ergebnis dieser Simulationen sind meistens weniger abstrakte Zeichnungen, in denen ein gewisses System erkennbar ist.</li>
+                            <li>Erkennungsmerkmal der <b>Lade-Icons</b> ist die Tatsache, dass sich diese endlos und unmerklich wiederholen. Daher eignen sich solche auch ideal zum Einsetzen in Prozesse, die kein festgesetztes Ende haben. </li>
+                                <li>Bei den <b>Datenvisualisierungen</b> werden im Hintergrund JSON-Daten aus einer API geladen und durch optionale Bewegung (bestenfalls) anschaulich dargestellt. </li>
+                    </ul>
+                    <h3>Tutorials & Inspiration</h3>
+                    In meinem Anfangsstadium dienten die Tutorials von Daniel Schiffman als Hilfestellung und Inspiration zugleich. Nachdem ich mir notwendige Grundlagen rund um JavaScript angeeignet hatte, lies ich mich von Künstlern und Gruppen aus Sozialen Netzwerken inspirieren. <br>
+                    Hier einige meiner meistgenutzten Quellen:
+                    <div class="contact-widget">
+                    <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw" target="_blank"><i class="fa fa-youtube"></i>Daniel Schiffman's Coding-Train</a>
+                    <a href="http://bigblueboo.tumblr.com/" target="_blank"><i class="fa fa-globe"></i>CHARLIE.DECK.BIGBLUEBOO</a>
+                    <a href="http://p5aholic.me/" target="_blank"><i class="fa fa-globe"></i>p5aholic</a>
+                    <a href="http://thedotisblack.com/" target="_blank"><i class="fa fa-globe"></i>thedotisblack</a>    
+                    <a href="https://www.reddit.com/r/generative/" target="_blank"><i class="fa fa-globe"></i>r/generative</a>                    </div>
+                    <h3>Aussichten</h3>
+                    Auf Code basierende Gestaltung lässt gut in die Welt der visuellen Effekte transferieren. Viele Simulationen und Effekte, die in der VFX-Branche benutzt werden, bedienen sich an diversen Algorithmen und Skripten. 
+                    Generative Gestaltung in p5.js stellt für mich eine Grundlage dar, um in noch tiefere Dimensionen dieses umfassenden Bereichs einzudringen. 
+                </div>
+
+            </div><!-- end container -->
+        </div><!-- end section -->
+
+        <div class="section wb" id="contact">
+            <div class="container">
+                <div class="row intro text-center wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <div class="col-md-12">
+                        <h1>Contact</h1>
+                        <p>Bei Fragen können Sie mich gerne kontaktieren.</p>
+                    </div><!-- end col -->
+                </div>
+                <div class="row m45">
+                    <div class="col-md-8 col-md-offset-2 text-left wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                        <div class="contact_form">
+                            <div id="message"></div>
+                            <form id="contactform" class="row" action="contact.php" name="contactform" method="post">
+                                <fieldset class="row-fluid">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Name" oninput="checkForm()" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail" oninput="checkForm()" required> 
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Was gibt's...?" oninput="checkForm()" required></textarea>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 g-recaptcha" 
+                                        data-sitekey="6LfcE2UUAAAAAAtnaNaiYQcTxqW_Il2Jxt5VqEza"
+                                        data-callback="checkForm"></div><br>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                         <button type="submit" value="SEND" id="submit" class="btn btn-primary" disabled>Senden!</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end section -->
+
+        <div class="copyrights">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <p>&copy;2018 Mathias Fontain</p>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end copyrights -->
+    </div><!-- end wrapper -->
+
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script> 
+
+    <!-- PORTFOLIO PLUGINS -->
+    <script src="js/venobox/venobox.min.js"></script> 
+    <script src="js/portfolio.js"></script>
+    <script src="js/hoverdir.js"></script>  
+
+    <script>
+    function checkForm() {
+        var form = document.getElementById("contactform");
+        document.getElementById("submit").disabled = !form.checkValidity();;
+    }
+    </script>
+
+</body>
+</html>
