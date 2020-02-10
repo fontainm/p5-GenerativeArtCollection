@@ -161,7 +161,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <p>&copy;2018 Mathias Fontain</p>
+                        <p>&copy;2020 Mathias Fontain</p>
                     </div><!-- end col -->
                 </div><!-- end row -->
             </div><!-- end container -->
