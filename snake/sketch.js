@@ -13,6 +13,7 @@ let highscore = 0;
 let priColor;
 let secColor;
 let bgColor = 35;
+let gameOver = false;
 
 function setup() {
 	let screensize = (windowWidth < 800) ? windowWidth * 0.9 : 800;
@@ -23,6 +24,20 @@ function setup() {
 	space = width/fieldCount;
 	setBackgroundCSS();
 	setGameOver(false);
+
+	// set options to prevent default behaviors for swipe, pinch, etc
+	var options = {
+		preventDefault: true
+	};
+	
+	// document.body registers gestures anywhere on the page
+	var hammer = new Hammer(document.body, options);
+	hammer.get('swipe').set({
+	direction: Hammer.DIRECTION_ALL
+	});
+
+	hammer.on("swipe", swiped);
+
 	restartGame();
 }
 
@@ -59,8 +74,9 @@ function setBackgroundCSS()
 
 function setGameOver(show)
 {
+	gameOver = show;
 	let gameOverHTML = select('#gameover');
-	gameOverHTML.html("<p id='gameover-hl'></p><p id ='gameover-txt'>HIT ENTER TO RESTART</p>"); //TODO: Einfacher
+	gameOverHTML.html("<p id='gameover-hl'></p><p id ='gameover-txt'>TOUCH OR HIT ENTER TO RESTART</p>"); //TODO: Einfacher
 
 	if(show) 
 	{
@@ -194,9 +210,35 @@ function keyPressed()
 {
 	if(snake.moveDir == null)
 	{
+		console.log(keyCode);
 		snake.move(keyCode);
 	}
-	if(keyCode === ENTER)
+	if(keyCode === ENTER && gameOver)
+	{
+		let sketchHTML = select('#sketch');
+		sketchHTML.addClass('hide');
+		setGameOver(false);
+		setTimeout(restartGame, 300);
+	}
+}
+
+function swiped(event) 
+{
+	console.log(event);
+	if (event.direction == 4) { //RIGHT
+	  snake.move(39);
+	} else if (event.direction == 8) { //UP
+	  snake.move(38);
+	} else if (event.direction == 16) { //DOWN
+	  snake.move(40);
+	} else if (event.direction == 2) { //LEFT
+	  snake.move(37);
+	}
+}
+
+function touchStarted()
+{
+	if (gameOver) 
 	{
 		let sketchHTML = select('#sketch');
 		sketchHTML.addClass('hide');
